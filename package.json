@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bull-board/express": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bull": "^4.10.4",
     "express": "4.17.1",
     "mongoose": "^4.0.1"
   },
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "start": "NODE_DEBUG=bull nodemon ./src/server.js",
+    "debug": "NODE_DEBUG=bull nodemon --inspect ./src/server.js",
     "seed": "node ./scripts/seedDb.js",
     "test": "jest --runInBand"
   },

@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+const dbConfig = require('./config/db');
+dbConfig()
+
+var Schema = mongoose.Schema;
 
 const User = mongoose.model('User', {
   name: String,
@@ -6,15 +10,18 @@ const User = mongoose.model('User', {
   password: String
 });
 
+const Steps = new Schema({
+  name: String,
+  description: String,
+});
+
 const Journey = mongoose.model('Journey', {
   name: String,
   description: String,
-  start: Date,
-  end: Date, 
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  steps: [Steps]
 });
 
 module.exports = {
   User,
-  Journey
+  Journey,
 };

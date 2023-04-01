@@ -1,9 +1,9 @@
 const mockStartJourney = jest.fn();
-jest.doMock('../../../src/queues/startJourneyQueue', () => ({
+jest.doMock('../../../../src/queues/startJourneyQueue', () => ({
     startJourney: mockStartJourney
 }));
 
-const scheduleJourneyStart = require('../../../src/services/journey/scheduleJourneyStart');
+const scheduleJourneyStart = require('../../../../src/services/journey/scheduleJourneyStart');
 
 describe('scheduleJourneyStart', () => {
     it('should schedule a journey to start', async () => {

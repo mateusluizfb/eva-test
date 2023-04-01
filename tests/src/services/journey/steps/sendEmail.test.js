@@ -1,4 +1,4 @@
-const sendEmail = require('../../../../src/services/journey/steps/sendEmail');
+const sendEmail = require('../../../../../src/services/journey/steps/sendEmail');
 
 describe('sendEmail', () => {
     it('has a name', () => {

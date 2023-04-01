@@ -1,10 +1,10 @@
 const mockModel = jest.fn();
-jest.doMock('../../../src/model', () => ({ Journey: mockModel }));
+jest.doMock('../../../../src/model', () => ({ Journey: mockModel }));
 
 const mockGetStepByName = jest.fn();
-jest.doMock('../../../src/services/journey/steps', () => ({ getStepByName: mockGetStepByName }));
+jest.doMock('../../../../src/services/journey/steps', () => ({ getStepByName: mockGetStepByName }));
 
-const runJourneySteps = require('../../../src/services/journey/runJourneySteps');
+const runJourneySteps = require('../../../../src/services/journey/runJourneySteps');
 
 describe('runJourneySteps', () => {
     it('should run all steps of a journey', async () => {

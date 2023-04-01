@@ -1,4 +1,4 @@
-const sendWhatsapp = require('../../../../src/services/journey/steps/sendWhatsapp');
+const sendWhatsapp = require('../../../../../src/services/journey/steps/sendWhatsapp');
 
 describe('sendWhatsapp', () => {
     it('has a name', () => {

@@ -14,7 +14,7 @@
     "start:worker": "NODE_DEBUG=bull nodemon ./src/worker.js",
     "debug:server": "NODE_DEBUG=bull nodemon --inspect ./src/server.js",
     "debug:worker": "NODE_DEBUG=bull nodemon --inspect ./src/worker.js",
-    "start:react": "cd app && npm start",
+    "start:app": "cd app && npm start",
     "seed": "node ./scripts/seedDb.js",
     "test": "jest --runInBand"
   },

@@ -1,7 +1,9 @@
 const Queue = require('bull');
 const runJourneySteps = require('../services/journey/runJourneySteps');
 
-const startJourneyQueue = new Queue('startJourneyQueue', 'redis://localhost:6379');
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
+
+const startJourneyQueue = new Queue('startJourneyQueue', REDIS_URL);
 
 const startJourney = ({ userId, journeyId, startAt }) => {
     return startJourneyQueue.add({

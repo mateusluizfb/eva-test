@@ -14,7 +14,6 @@ const runJourneySteps = async ({ userId, journeyId }) => {
             .filter(step => step)
             .map(step => step.run({ userId }));
     } catch (e) {
-        console.error(e);
         throw e;
     }
 

@@ -11,7 +11,6 @@ module.exports = {
             })
         }
 
-        // Schedule the journey to start at the specified time
         scheduleJourneyStart({
             userId,
             journeyId,

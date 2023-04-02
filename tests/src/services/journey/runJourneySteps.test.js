@@ -32,4 +32,38 @@ describe('runJourneySteps', () => {
         expect(mockRunStep).toHaveBeenCalledWith({ userId });
         expect(mockRunStep).toHaveBeenCalledTimes(2);
     });
+
+    it('should not run steps that are not found', async () => {
+        const userId = 'userId';
+        const journeyId = 'journeyId';
+
+        mockModel.findOne = jest.fn(() => ({
+            exec: () => ({
+                steps: [
+                    { name: 'step1' },
+                    { name: 'step2' }
+                ]
+            })
+        }));    
+
+        mockRunStep = jest.fn();
+        mockGetStepByName.mockImplementation(() => null);
+
+        await runJourneySteps({ userId, journeyId });
+
+        expect(mockGetStepByName).toHaveBeenCalledWith('step1');
+        expect(mockGetStepByName).toHaveBeenCalledWith('step2');
+        expect(mockRunStep).not.toHaveBeenCalled();
+    });
+
+    it('should throw an error if journey is not found', async () => {
+        const userId = 'userId';
+        const journeyId = 'journeyId';
+
+        mockModel.findOne = jest.fn(() => ({
+            exec: () => null
+        }));    
+
+        expect(runJourneySteps({ userId, journeyId })).rejects.toThrow('Journey not found');
+    });
 });

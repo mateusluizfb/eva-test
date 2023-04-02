@@ -10,8 +10,11 @@
     "mongoose": "^4.0.1"
   },
   "scripts": {
-    "start": "NODE_DEBUG=bull nodemon ./src/server.js",
-    "debug": "NODE_DEBUG=bull nodemon --inspect ./src/server.js",
+    "start:server": "NODE_DEBUG=bull nodemon ./src/server.js",
+    "start:worker": "NODE_DEBUG=bull nodemon ./src/worker.js",
+    "debug:server": "NODE_DEBUG=bull nodemon --inspect ./src/server.js",
+    "debug:worker": "NODE_DEBUG=bull nodemon --inspect ./src/worker.js",
+    "start:react": "cd app && npm start",
     "seed": "node ./scripts/seedDb.js",
     "test": "jest --runInBand"
   },

@@ -2,6 +2,13 @@
 
 The project is split in two, the backend and the frontend. This means that you have to do the setup for both of them.
 
+### Folder structure
+
+- `app` - Frontend app
+- `src` - Backend server
+- `scripts` - Scripts for general purpose
+- `test` - All unit tests
+
 ### Backend setup
 
 Docker:

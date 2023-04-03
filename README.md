@@ -34,7 +34,7 @@ Server:
 
 ## Architecture
 
-The server follows a layered architecture. It contains controllers, services, models. Aside from the stard back-end that handles request, responses and server stuff we also have a background job worker.
+The server follows a layered architecture. It contains controllers, services, models. Aside from the standard back-end that handles request, responses and server needs we also have a background job worker.
 
 The worker is backed by BullJs. When the server receives a schedule request, it will enqueue a job in the queue. The worker will then pick up the job and execute it. This is useful for tasks that take a long time to complete, like sending emails or processing images.
 
@@ -44,3 +44,4 @@ As for the front-end, is a very simple React app. It uses hooks and lets the use
 
 - Move all DB queries to a repository layer. It it will make testing easier and it will decouple the business logic from the DB.
 - Create a generic queue factory function that contains all the logic for creating a queue. It will abstract the lib we use for the queue and make it easier to switch to another one. The interface would be the same.
+- Improve step failure handling. Right now, if a step fails, the promise fails silently. We should add a retry mechanism and a way to handle the failure.

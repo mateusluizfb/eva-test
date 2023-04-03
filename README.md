@@ -22,6 +22,7 @@ Server:
 3. Run `npm run start:server` to start the server
 4. In another terminal tab, run `npm run start:worker` to start the worker. This is needed for the job queue to work.
 5. Run the seed script with `node scripts/seedDb.js` to seed the database with some dummy data.
+6. Runs tests with `npm run test`
 
 ### Frontend setup
 
@@ -41,5 +42,5 @@ As for the front-end, is a very simple React app. It uses hooks and lets the use
 
 ## Future improvements
 
-- Move all DB queries to repositories. It it will make testing the code easier and it will decouple the business logic from the DB.
+- Move all DB queries to a repository layer. It it will make testing easier and it will decouple the business logic from the DB.
 - Create a generic queue factory function that contains all the logic for creating a queue. It will abstract the lib we use for the queue and make it easier to switch to another one. The interface would be the same.

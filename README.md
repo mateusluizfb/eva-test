@@ -12,12 +12,12 @@ The project is split in two, the backend and the frontend. This means that you h
 ### Backend setup
 
 Docker:
-1. Install docker
+1. Install and run docker 
 2. Run `docker-compose up mongo -d` to start the mongo database
 3. Run `docker-compose up redis -d` to start the redis database
 
 Server:
-1. Use node version >= 16.10.0
+1. Use node version equal or greater than 16.10.0
 2. Install dependencies with `npm install`
 3. Run `npm run start:server` to start the server
 4. In another terminal tab, run `npm run start:worker` to start the worker. This is needed for the job queue to work.
@@ -25,7 +25,7 @@ Server:
 
 ### Frontend setup
 
-1. Use node version >= 16.10.0
+1. Use node version equal or greater than 16.10.0
 2. `cd app`
 3. Install dependencies with `npm install`
 4. Run `npm start`
